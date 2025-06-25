@@ -1,13 +1,153 @@
-body {
+/* Import your Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body, .app {
+  font-family: 'Inter', sans-serif;
+  background: #faf9fc;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* -------------------------------- */
+/* Container + Header              */
+/* -------------------------------- */
+.converter-container {
+  max-width: 400px;
+  width: 100%;
+  background: #fff;
+  border: 2px solid #635FC7;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(99,95,199,0.2);
+  animation: fadeInDown 0.4s ease-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.converter-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.converter-header .fa-coins {
+  color: #635FC7;
+  margin-right: 8px;
+}
+
+.converter-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* -------------------------------- */
+/* Field groups                     */
+/* -------------------------------- */
+.field-label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.field-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+/* MUI’s Select renders an input under the hood—this targets it */
+.field-wrapper .MuiSelect-root {
+  padding: 8px 12px;
+  min-width: 100px;
+  border: none;
+}
+
+/* Keep the MUI dropdown icon dark so it shows up */
+.field-wrapper .MuiSelect-icon {
+  color: #444 !important;
+}
+
+/* TextField input styling */
+.amount-input, .converted-input {
+  flex: 1;
+  border: none;
+  font-size: 1rem;
+  padding: 8px 12px;
+  text-align: right ;
+}
+
+.converted-input {
+  background: #F3EDFF;
+  
+}
+
+/* hide the underline on MUI standard inputs */
+.field-wrapper .MuiInput-underline:before,
+.field-wrapper .MuiInput-underline:after {
+  display: none;
+}
+
+/* -------------------------------- */
+/* Rates & Swap button              */
+/* -------------------------------- */
+.rate-text {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+.swap-button-wrapper {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.swap-button-wrapper .fa-exchange-alt {
+  color: #635FC7;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.swap-button-wrapper .fa-exchange-alt:hover {
+  transform: scale(1.2);
+}
+
+/* -------------------------------- */
+/* Footer                           */
+/* -------------------------------- */
+.footer-text {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: center;
+}
+
+/* -------------------------------- */
+/* Responsive tweaks                */
+/* -------------------------------- */
+@media (max-width: 500px) {
+  .converter-container {
+    padding: 16px;
+  }
+  .converter-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .swap-button-wrapper {
+    margin: 12px 0;
+  }
 }
