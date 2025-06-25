@@ -3,7 +3,6 @@ import data from '../data/response.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoins, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 import { Select, MenuItem, FormControl, TextField } from '@mui/material';
-import { motion, LayoutGroup } from 'framer-motion';
 
 export default function CurrencyConverter() {
   const currencies = useMemo(
@@ -60,10 +59,7 @@ export default function CurrencyConverter() {
           onChange={e => setAmount(e.target.value)}
           placeholder="0.00"
           className="amount-input"
-           InputProps={{
-    inputProps: { style: { textAlign: 'right' } }
-  }}
-          
+          sx={{ style: { textAlign: 'right' } }}
         />
       </div>
       <div className="rate-text">Rate: {from.buyRate}</div>
@@ -98,10 +94,8 @@ export default function CurrencyConverter() {
           variant="standard"
           value={converted}
           placeholder="0.00"
-          className="converted-input"
-          InputProps={{
-    inputProps: { style: { textAlign: 'right', paddingRight: '10px', height: '40px' } }
-  }}
+          className="converted-input"  
+          sx={{style: { textAlign: 'right', paddingRight: '10px', height: '40px' } }}
         />
       </div>
       <div className="rate-text">Rate: {to.sellRate}</div>
