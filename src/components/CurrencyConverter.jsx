@@ -54,12 +54,19 @@ export default function CurrencyConverter() {
 
         <TextField
           variant="standard"
-          type="number"
+          type="text"
           value={amount}
-          onChange={e => setAmount(e.target.value)}
+          onChange={e => {
+          const digitsOnly = e.target.value.replace(/\D/g, '');
+          setAmount(digitsOnly);
+          }}
           placeholder="0.00"
           className="amount-input"
-          inputProps={{style: { textAlign: 'right' } }}
+          inputProps={{
+          inputMode: 'numeric',                // numeric keypad on mobile
+          pattern: '[0-9]*',                   // only digits valid
+          style: { textAlign: 'right', paddingRight: '10px' },
+          }}
         />
       </div>
       <div className="rate-text">Rate: {from.buyRate}</div>

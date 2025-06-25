@@ -144,7 +144,7 @@ body, .app {
     padding: 16px;
   }
   .converter-header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
   .swap-button-wrapper {
