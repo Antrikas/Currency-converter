@@ -1,5 +1,5 @@
 /* Import your Inter font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
 * {
   margin: 0;
@@ -7,8 +7,9 @@
   box-sizing: border-box;
 }
 
-body, .app {
-  font-family: 'Inter', sans-serif;
+body,
+.app {
+  font-family: "Inter", sans-serif;
   background: #faf9fc;
   color: #333;
   display: flex;
@@ -23,16 +24,22 @@ body, .app {
   max-width: 400px;
   width: 100%;
   background: #fff;
-  border: 2px solid #635FC7;
+  border: 2px solid #635fc7;
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 4px 12px rgba(99,95,199,0.2);
+  box-shadow: 0 4px 12px rgba(99, 95, 199, 0.2);
   animation: fadeInDown 0.4s ease-out;
 }
 
 @keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to   { opacity: 1; transform: translateY(0);    }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .converter-header {
@@ -42,9 +49,10 @@ body, .app {
 }
 
 .converter-header .fa-coins {
-  color: #635FC7;
+  color: #635fc7;
   margin-right: 8px;
-  vertical-align: middle;  
+  vertical-align: middle;
+  line-height: 1;
 }
 
 .converter-title {
@@ -84,17 +92,17 @@ body, .app {
 }
 
 /* TextField input styling */
-.amount-input, .converted-input {
+.amount-input,
+.converted-input {
   flex: 1;
   border: none;
   font-size: 1rem;
   padding: 8px 12px;
-  text-align: right ;
+  text-align: right;
 }
 
 .converted-input {
-  background: #F3EDFF;
-  
+  background: #f3edff;
 }
 
 /* hide the underline on MUI standard inputs */
@@ -119,7 +127,7 @@ body, .app {
 }
 
 .swap-button-wrapper .fa-exchange-alt {
-  color: #635FC7;
+  color: #635fc7;
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -146,7 +154,7 @@ body, .app {
   }
   .converter-header {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
   }
   .swap-button-wrapper {
     margin: 12px 0;
