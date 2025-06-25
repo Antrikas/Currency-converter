@@ -59,7 +59,7 @@ export default function CurrencyConverter() {
           onChange={e => setAmount(e.target.value)}
           placeholder="0.00"
           className="amount-input"
-          sx={{ style: { textAlign: 'right' } }}
+          inputProps={{style: { textAlign: 'right' } }}
         />
       </div>
       <div className="rate-text">Rate: {from.buyRate}</div>
@@ -95,7 +95,7 @@ export default function CurrencyConverter() {
           value={converted}
           placeholder="0.00"
           className="converted-input"  
-          sx={{style: { textAlign: 'right', paddingRight: '10px', height: '40px' } }}
+          inputProps={{ style: { textAlign: 'right', paddingRight: '10px', height: '40px' } }}
         />
       </div>
       <div className="rate-text">Rate: {to.sellRate}</div>
