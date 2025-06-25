@@ -108,7 +108,12 @@ export default function CurrencyConverter() {
       <div className="rate-text">Rate: {to.sellRate}</div>
 
       {/* Footer */}
-      <div className="footer-text">Rates as of {data.data.lastUpdate}</div>
+      <div className="footer-text">Rates as of {new Date().toLocaleString(undefined, {
+      year:   'numeric',
+      month:  '2-digit',
+      day:    '2-digit',
+      })}
+      </div>
     </div>
   );
 }
